@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5271315329027065898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5271315329027065899}
+  - component: {fileID: 5271315329027065900}
+  - component: {fileID: 5271315329027065901}
+  m_Layer: 6
+  m_Name: Thunder Sword
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5271315329027065899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271315329027065898}
+  m_LocalRotation: {x: 0.0058355313, y: 0.14562416, z: 0.5362351, w: 0.83139133}
+  m_LocalPosition: {x: -0.84930956, y: 0.77, z: 2.2259877}
+  m_LocalScale: {x: 1.2016088, y: 0.85539025, z: 1.5005672}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1643556726842517613}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5271315329027065900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271315329027065898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f602cba3c8e1a544ba0b2db037d54fa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 2c758ad0be459554fb19addacb03905f, type: 3}
+  effectFX: {fileID: 8832801113886017143, guid: 2b78e710b4a4c8f4f9e8da9b916c3d7d, type: 3}
+  damageBonus: 1
+  effectDamage: 2
+  effectSlowKoeficient: 2
+  effectDuration: 3
+  effectCullDown: 0.2
+  effectChance: 0.6
+  bIsEffectDamages: 1
+  bIsEffectSlows: 1
+  damageZone: {fileID: 0}
+  bIsUnInterractable: 0
+--- !u!65 &5271315329027065901
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271315329027065898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0.0077326824, y: 0.21275069, z: -0.100047804}
+--- !u!1001 &5271315327064897062
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5271315329027065899}
+    m_Modifications:
+    - target: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1905
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1155
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.351
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99967986
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.025302162
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000021522478
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000095338656
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -2.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7616491485583010904, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_Name
+      value: Sword_Stormbringer_00_FREE
+      objectReference: {fileID: 0}
+    - target: {fileID: 7616491485583010904, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+--- !u!4 &1643556726842517613 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6910896215548796491, guid: f2e968e095f1aad429585a15635cb299, type: 3}
+  m_PrefabInstance: {fileID: 5271315327064897062}
+  m_PrefabAsset: {fileID: 0}

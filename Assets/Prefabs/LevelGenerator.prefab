@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8389267488969565561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8389267488969565567}
+  - component: {fileID: 8389267488969565560}
+  m_Layer: 0
+  m_Name: LevelGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8389267488969565567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8389267488969565561}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.8335443, y: -25.648527, z: -33.928135}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8389267488969565560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8389267488969565561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc09a3f1fb9188746a52e7bd6c7e22ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameMode: 0
+  dungeonUnit: {fileID: 0}
+  unitsToLoad:
+  - {fileID: 2182693979263183803, guid: 23ea989183db07f4eb8badfcddc97bb1, type: 3}
+  - {fileID: 7138053938327012745, guid: 096f68f322b179d40a2ddf1ea6a612ee, type: 3}
+  - {fileID: 5970410501827949590, guid: f3c917efc64d0f2428515e41401c3063, type: 3}
+  - {fileID: 7043309584442886708, guid: 627b046a52ce50e40aa26b19c3eb0970, type: 3}
+  - {fileID: 2578744354619158392, guid: ffbd230a48994d34ebed824d76761a02, type: 3}
+  - {fileID: 6217289990186689958, guid: c5c7abbd1a50b0b47bf7346759cf7f22, type: 3}
+  - {fileID: 3573668405366310579, guid: 6a150289a7f3dc240ab961607a96b17b, type: 3}
+  - {fileID: 1356639081830039616, guid: be0200a073ed46a4b92317d83bfaac7e, type: 3}
+  - {fileID: 4906721627484760610, guid: 0e9396cbee5f0784a97ce71f6871a5c0, type: 3}
+  offset: {x: -12, y: -66}
+  xExtraOffset: 0
+  currentEnemyAmount: 3
+  minWaves: 2
+  maxWaves: 3
+  waves: 0
+  unitsTillBoss: 14
+  respawnWave: 5
+  bIsUnitLoaded: 1
+  allUnits: []
+  enemies:
+  - {fileID: 4252540626751758588, guid: 83bb9845f6dddf94f9d549988af07fb5, type: 3}
+  - {fileID: 7055994241612576313, guid: 615c5a052b9c03c409d230d80c063eda, type: 3}
+  onUnitCleared:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnemyDie:
+    m_PersistentCalls:
+      m_Calls: []

@@ -15,7 +15,7 @@ public class NecromancerWand : Weapon
     [SerializeField] private float ghostSummonCullDown;
     [SerializeField] private float devastationRange;
 
-    public override int DamageBonus 
+    public override int Damage 
     { 
         get => damageBonus; 
         set => damageBonus = value; 
@@ -59,7 +59,7 @@ public class NecromancerWand : Weapon
                 }
                 else if(characters[i].name.Contains("Boss") == true && characters[i].transform.tag != "Player" && Vector3.Distance(transform.position, characters[i].transform.position) <= devastationRange)
                 {
-                    characters[i].EarnDamage(owner.Damage + DamageBonus, gameObject);
+                    characters[i].EarnDamage(owner.Damage + Damage, gameObject);
                 }
             }
         }

@@ -42,7 +42,7 @@ public class MeleeWeapon : Weapon, IWeaponEffect
 
     public float EffectDuration => effectDuration;
     public DamageZone DamageZone { set => damageZone = value; }
-    public override int DamageBonus { get => damageBonus; set => damageBonus = value; }
+    public override int Damage { get => damageBonus; set => damageBonus = value; }
     public override WeaponType WeaponType => weaponType;
     public GameObject EffectFX { get => effectFX; set => effectFX = value; }
 
@@ -60,7 +60,7 @@ public class MeleeWeapon : Weapon, IWeaponEffect
             knight.PickupSword(this); 
             damageZone = knight.DamageZone;
 
-            damageZone.weaponOwner = this;
+            //damageZone.weapon = this;
             pickupVoulme.enabled = false;
         }
     }
@@ -75,7 +75,7 @@ public class MeleeWeapon : Weapon, IWeaponEffect
 
     public override void EndAttack()
     {
-        damageZone.GetComponent<BoxCollider>().enabled = false;  
+        //damageZone.GetComponent<BoxCollider>().enabled = false;  
     }
 
     public void PutEffectOn(Transform target)
@@ -103,7 +103,7 @@ public class MeleeWeapon : Weapon, IWeaponEffect
 
     public override void StartAttack()
     {
-        damageZone.GetComponent<BoxCollider>().enabled = true;
+        //damageZone.GetComponent<BoxCollider>().enabled = true;
     }
 
     private IEnumerator<WaitForSeconds> DelayTurnOffFX(GameObject fx, Character target)

@@ -12,7 +12,7 @@ public enum WeaponType
 /// </summary>
 public abstract class Weapon : MonoBehaviour
 {
-    public abstract int DamageBonus { get; set; }
+    public abstract int Damage { get; set; }
     public abstract WeaponType WeaponType { get;}
 
     public abstract void StartAttack();

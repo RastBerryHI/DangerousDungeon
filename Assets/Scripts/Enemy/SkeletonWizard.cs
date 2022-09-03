@@ -1,4 +1,5 @@
 using System.Linq;
+using CharacterComponents;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -131,7 +132,7 @@ public class SkeletonWizard : Character
         healthCircle.Alert = Health / 3;
         healthCircle.gameObject.SetActive(false);
         maxHealth = health;
-        GetComponentInChildren<DamageZone>().onHit += OnHit;
+        GetComponentInChildren<DamageZone>().OnOverlap += OnHit;
     }
 
     private void Update()
@@ -158,9 +159,9 @@ public class SkeletonWizard : Character
         }
     }
 
-    private void OnHit(Character character)
+    private void OnHit(Damageble damageble)
     {
-        Curse[] curses = character.GetComponentsInChildren<Curse>();
+        Curse[] curses = damageble.GetComponentsInChildren<Curse>();
         if(curses != null)
         {
             foreach(Curse c in curses)
@@ -171,8 +172,8 @@ public class SkeletonWizard : Character
                 }
             }
 
-            Curse _curse = Instantiate<Curse>(curse, character.transform.position, Quaternion.identity);
-            _curse.transform.parent = character.transform;
+            Curse _curse = Instantiate<Curse>(curse, damageble.GetComponent<CharacterCached>().Transform.position, Quaternion.identity);
+            _curse.transform.parent = damageble.transform;
 
             System.Array.Clear(curses, 0, curses.Length);
             curses = null;

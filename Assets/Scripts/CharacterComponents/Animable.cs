@@ -1,5 +1,4 @@
 using UnityEngine;
-using CharacterComponents;
 using Cysharp.Threading.Tasks;
 
 namespace CharacterComponents
@@ -14,6 +13,7 @@ namespace CharacterComponents
         
         [Header("Character Components")]
         [SerializeField] private AIMovable movable;
+        [SerializeField] private ItemsHoldable itemsHoldable;
         
         [Header("SFX")]
         [SerializeField] private AudioClip[] movementSfx;
@@ -39,7 +39,7 @@ namespace CharacterComponents
                 anim.SetBool("isAttack", false);
             }
         }
-
+        
         public async void EarnDamage()
         {
            anim.SetBool("isDamage", true); 
@@ -48,6 +48,21 @@ namespace CharacterComponents
            {
                anim.SetBool("isDamage", false);
            }
+        }
+
+        public void PlayFootStep()
+        {
+            footAudio.PlayOneShot(movementSfx[Random.Range(0, movementSfx.Length)]);
+        }
+
+        public void ActivateDamageZone()
+        {
+            itemsHoldable.ActivateDamageZone();
+        }
+
+        public void DisableDamageZone()
+        {
+            itemsHoldable.DisableDamageZone();
         }
     }
 }

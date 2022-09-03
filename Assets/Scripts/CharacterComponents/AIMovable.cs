@@ -21,7 +21,7 @@ namespace CharacterComponents
         private float horizontalVelocity;
     
         private NavMeshAgent agent;
-        private Transform target;
+        [SerializeField]private Transform target;
         private CharacterCached cache;
         private Vector3 velocity;
     
@@ -81,11 +81,11 @@ namespace CharacterComponents
             {
                 Move();
                 RotateToTarget();
-                Debug.Log(agent.velocity.magnitude);
                 return;
             }
-
+            
             agent.isStopped = true;
+            horizontalVelocity = 0;
         }
 
         public void StopMovement() => agent.isStopped = true;

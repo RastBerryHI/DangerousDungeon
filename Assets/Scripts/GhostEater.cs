@@ -22,7 +22,7 @@ public class GhostEater : MonoBehaviour
         if(other.tag == "Character")
         {
             Debug.Log(master.MaxHealth);
-            other.GetComponent<Character>().EarnDamage(master.Damage + master.CurrentWeapon.DamageBonus, gameObject);
+            other.GetComponent<Character>().EarnDamage(master.Damage + master.CurrentWeapon.Damage, gameObject);
             Destroy(gameObject);
             //master.Heal(master.MaxHealth);
         }

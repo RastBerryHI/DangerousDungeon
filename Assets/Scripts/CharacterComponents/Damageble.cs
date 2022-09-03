@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class Damageble : MonoBehaviour
 {
     [SerializeField] private float health;
+    
     private float maxHealth;
     private bool isImmortal;
 
@@ -33,7 +34,7 @@ public class Damageble : MonoBehaviour
     public UnityEvent onEarnDamage;
     public UnityEvent onDie;
     
-    public void EarnDamage(int damage, GameObject sender)
+    public void EarnDamage(int damage)
     {
         if (isImmortal)
         {
@@ -45,12 +46,14 @@ public class Damageble : MonoBehaviour
         if (Health == 0)
         {
             Die();
-            return;
         }
+        
+        onEarnDamage.Invoke();
     }
 
     private void Die()
     {
+        onDie.Invoke();
         LevelGenerator.s_levelGenerator.DecrementEnemyCount(gameObject);
         
         // Implement summoned skeleton removing

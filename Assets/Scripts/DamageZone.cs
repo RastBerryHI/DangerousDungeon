@@ -1,96 +1,58 @@
 using UnityEngine;
 using UnityEngine.Events;
+
 public class DamageZone : MonoBehaviour
 {
     [SerializeField] private WeaponType weaponType;
     [SerializeField] private BoxCollider damageZone;
 
-    [SerializeField] private Character character;
-    [SerializeField] public MeleeWeapon weaponOwner;
-
-    private Character currentCharacter;
+    [SerializeField] private ItemsHoldable itemsHoldable;
+    [SerializeField] private Damageble damageble;
+    
+    private Transform trm;
     private IDestroyable destroyable;
-
-    public WeaponType WeaponType => weaponType;
-    public UnityAction<Character> onHit;
-
-    private void Awake()
-    {
-        damageZone = GetComponent<BoxCollider>();
-        character = GetComponentInParent<Character>();
-        damageZone.enabled = false;
-    }
-
-    private void Start()
-    {
-        damageZone.isTrigger = true;
-    }
+    
+    public UnityAction<Damageble> OnOverlap;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name != character.name)
+        if (trm.parent != other.transform)
         {
-            currentCharacter = other.GetComponent<Character>();
-            destroyable = other.GetComponent<IDestroyable>();
-
-            if(currentCharacter != null)
+            var damagebale = other.GetComponent<Damageble>();
+        
+            if (damagebale)
             {
-                InterractWithCharacter(currentCharacter);
+                InteractWithDamageble(damagebale);
             }
-
-            if(destroyable != null)
-            {
-                InterractWithDestroyable(destroyable);
-            }
-
-            currentCharacter = null;
-            destroyable = null;
+        
+            // if (destroyable != null)
+            // {
+            //     InteractWithDestroyable(destroyable);
+            // }
         }
     }
 
-    private void InterractWithCharacter(Character character)
+    private void InteractWithDamageble(Damageble target)
     {
-        if (character == null)
+        if (!itemsHoldable)
         {
             return;
         }
 
-        if (weaponType == WeaponType.Melee)
-        {
-            currentCharacter.EarnDamage(character.Damage + weaponOwner.DamageBonus, gameObject);
-        }
-        else if (weaponType == WeaponType.Magic)
-        {
-            currentCharacter.EarnDamage(character.Damage, gameObject);
-        }
+        target.EarnDamage(itemsHoldable.Weapon.Damage);
+        
+        // TODO: Refactor effects system
+        
+        // if (weapon && !currentCharacter.IsUnderEffect)
+        // {
+        //     weapon.PutEffectOn(currentCharacter.transform);
+        // }
 
-        if (weaponOwner != null)
-        {
-            if (currentCharacter.IsUnderEffect == true)
-            {
-                return;
-            }
-
-            weaponOwner.PutEffectOn(currentCharacter.transform);
-        }
-
-        onHit(currentCharacter);
+        OnOverlap(target);
     }
 
-    private void InterractWithDestroyable(IDestroyable destroyObj)
+    private void InteractWithDestroyable(IDestroyable destroyObj)
     {
-        if(destroyObj == null)
-        {
-            return;
-        }
-
-        if (weaponType == WeaponType.Melee)
-        {
-            destroyObj.EarnDamage(character.Damage + weaponOwner.DamageBonus, gameObject);
-        }
-        else if (weaponType == WeaponType.Magic)
-        {
-            destroyObj.EarnDamage(character.Damage, gameObject);
-        }
+        // TODO: Get rid of destroyables
     }
 }

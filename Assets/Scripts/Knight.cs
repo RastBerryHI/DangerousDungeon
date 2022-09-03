@@ -393,6 +393,11 @@ public class Knight : Character, ICanTrade
         Debug.LogWarning($"{this.name} took {damage} dmg.");
     }
 
+    public void Test()
+    {
+        Debug.Log("Test");
+    }
+
     // Getting health 
     public override void Heal(int healthInput)
     {

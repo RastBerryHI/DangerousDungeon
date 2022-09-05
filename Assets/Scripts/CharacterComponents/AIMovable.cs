@@ -3,10 +3,9 @@ using UnityEngine.AI;
 
 namespace CharacterComponents
 {
+    [RequireComponent(typeof(NavMeshAgent))]
     public class AIMovable : MonoBehaviour
     {
-        [SerializeField] private CharacterCached cachedData;
-    
         [SerializeField] private float speed;
         [SerializeField] private float rotationSpeed;
         [SerializeField] private float groundDistance;
@@ -21,7 +20,7 @@ namespace CharacterComponents
         private float horizontalVelocity;
     
         private NavMeshAgent agent;
-        [SerializeField]private Transform target;
+        private Transform target;
         private CharacterCached cache;
         private Vector3 velocity;
     
@@ -79,7 +78,7 @@ namespace CharacterComponents
 
             if (target)
             {
-                Move();
+                Move(Speed);
                 RotateToTarget();
                 return;
             }
@@ -92,7 +91,7 @@ namespace CharacterComponents
         
         public void ResumeMovement() => agent.isStopped = false;
         
-        private void Move()
+        public void Move(float speed)
         {
             float distance = Vector3.Distance(cache.Transform.position, target.position);
         
@@ -107,7 +106,7 @@ namespace CharacterComponents
                 // Resume
                 agent.isStopped = false;
                 horizontalVelocity = 1;
-                agent.speed = Speed;
+                agent.speed = speed;
                 agent.SetDestination(target.position);
             }
         }
@@ -122,7 +121,7 @@ namespace CharacterComponents
 
         private void ApplyGravity()
         {
-            bool isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
             if (velocity.y >= 0)
             {

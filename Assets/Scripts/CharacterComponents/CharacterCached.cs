@@ -7,9 +7,7 @@ namespace CharacterComponents
     [RequireComponent
         (
             typeof(Attackable),
-            typeof(AIMovable),
             typeof(VFXEmittable)
-
         )
     ]
     [RequireComponent

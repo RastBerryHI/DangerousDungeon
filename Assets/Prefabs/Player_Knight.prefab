@@ -177,86 +177,6 @@ MonoBehaviour:
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &581182413481807436
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 795324672190239046}
-  - component: {fileID: 793485220842614102}
-  - component: {fileID: 685517638252693354}
-  m_Layer: 0
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &795324672190239046
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581182413481807436}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 16.397299, y: 16.397287, z: 16.397287}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 795345822418617158}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29, y: -70.4}
-  m_SizeDelta: {x: 2021, y: 482}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &793485220842614102
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581182413481807436}
-  m_CullTransparentMesh: 1
---- !u!114 &685517638252693354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581182413481807436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 45
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 300
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 
 --- !u!1 &581578105060120856
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +211,6 @@ RectTransform:
   - {fileID: 795451374111208242}
   - {fileID: 795924123057530188}
   - {fileID: 795109769762043856}
-  - {fileID: 795324672190239046}
   m_Father: {fileID: 649355871163121622}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -882,9 +801,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1720415743548138431}
   - component: {fileID: 1720415743548138400}
-  - component: {fileID: 1720415743548138401}
+  - component: {fileID: 5216269688957853851}
   - component: {fileID: 5430344245019858149}
   - component: {fileID: 4924078610013185766}
+  - component: {fileID: -918442880736499384}
+  - component: {fileID: 4531250809997574586}
+  - component: {fileID: -6273608532220645066}
+  - component: {fileID: 6867629400724804760}
+  - component: {fileID: 4091450556714506990}
   m_Layer: 6
   m_Name: Player_Knight
   m_TagString: Player
@@ -929,11 +853,11 @@ CharacterController:
   m_Height: 1.6
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.75, z: 0}
---- !u!114 &1720415743548138401
+--- !u!114 &5216269688957853851
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -942,41 +866,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1720415743548138430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 320213f8038cdf64aa204a0887e11599, type: 3}
+  m_Script: {fileID: 11500000, guid: d98bda3772514a0bb1e58d7d22843279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onAttack:
-    m_PersistentCalls:
-      m_Calls: []
-  onEarnDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  onDie:
-    m_PersistentCalls:
-      m_Calls: []
-  health: 10
-  damage: 2
   speed: 4
   rotationSpeed: 350
   groundDistance: 0.1
-  gold: 0
-  camera: {fileID: 0}
-  groundCheck: {fileID: 1720415742264552751}
-  healthCircle: {fileID: 684686655769219070}
-  bIsMotionBanned: 0
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 512
-  characterMask:
-    serializedVersion: 2
-    m_Bits: 64
-  weaponSocket: {fileID: 292834121508372160}
-  onShieldBlock:
-    m_PersistentCalls:
-      m_Calls: []
-  onRemoveShieldBlock:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &5430344245019858149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1004,11 +899,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  damageBonus: 0
   onEarnDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1720415743548138401}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Knight, Assembly-CSharp
         m_MethodName: Test
         m_Mode: 1
@@ -1023,6 +917,83 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-918442880736499384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720415743548138430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3df008488d41b14c98ac5339463f5fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndAttack:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4531250809997574586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720415743548138430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b28c1c6bd8e94387e7afc4ae2397e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageVFX: []
+  deathPieces: []
+  attackVfx: {fileID: 0}
+--- !u!114 &-6273608532220645066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720415743548138430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95917fd53647aa4487c53643d1f16a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageZone: {fileID: 1720415743789106156}
+  weaponSocket: {fileID: 6146995878646586291}
+  weapon: {fileID: 1327467212938116275}
+--- !u!114 &6867629400724804760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720415743548138430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c03fdc659ac374bb14713e897e60e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4091450556714506990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720415743548138430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef481a7ab5335840b010e8d48e360d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  cache: {fileID: 6867629400724804760}
+  characterMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1720415743550705409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,9 +2964,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 0
   damageZone: {fileID: 1720415743789106155}
-  itemsHoldable: {fileID: 0}
-  damageble: {fileID: 0}
-  trm: {fileID: 1720415743789106154}
+  itemsHoldable: {fileID: -6273608532220645066}
+  damageble: {fileID: 4924078610013185766}
 --- !u!82 &1720415743370653303
 AudioSource:
   m_ObjectHideFlags: 0

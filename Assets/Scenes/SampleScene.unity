@@ -1209,9 +1209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawn: {fileID: 224893571}
-  characters:
-  - {fileID: 1720415743548138401, guid: 6cdd393eb756d7e4787410e831beac15, type: 3}
-  - {fileID: 3358854121119439809, guid: a9ab074cd1cb3004a9bec46bd3b624ed, type: 3}
+  movables:
+  - {fileID: 5216269688957853851, guid: 6cdd393eb756d7e4787410e831beac15, type: 3}
   camera: {fileID: 1687258583}
 --- !u!1 &232398847
 GameObject:

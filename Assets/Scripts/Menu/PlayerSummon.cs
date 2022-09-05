@@ -1,3 +1,4 @@
+using CharacterComponents;
 using UnityEngine;
 
 public class PlayerSummon : MonoBehaviour
@@ -5,14 +6,14 @@ public class PlayerSummon : MonoBehaviour
     public static PlayerSummon s_instance;
 
     [SerializeField] private Transform spawn;
-    [SerializeField] private Character[] characters;
+    [SerializeField] private Movable[] movables;
     [SerializeField] private new PlayerCamera camera;
 
-    private Character character;
+    private Movable character;
 
     private int characterSelected;
 
-    public Character Character => character;
+    public Movable Character => character;
 
     private void Awake()
     {
@@ -30,26 +31,33 @@ public class PlayerSummon : MonoBehaviour
             Destroy(s_instance.gameObject);
         }
 
-        if (characterSelected < 1) characterSelected = 1;
-        character = Instantiate(characters[characterSelected - 1], spawn.position, Quaternion.identity);
+        if (characterSelected < 1)
+        {
+            characterSelected = 1;
+        }
 
-        if (characterSelected == 2)
-        {
-            Necromancer chell = character as Necromancer;
-            if (chell != null)
-            {
-                chell.Camera = camera.GetComponent<Camera>();
-                camera.player = chell.transform;
-            }
-        }
-        else if (characterSelected == 1)
-        {
-            Knight chell = character as Knight;
-            if (chell != null)
-            {
-                chell.Camera = camera.GetComponent<Camera>();
-                camera.player = chell.transform;
-            }
-        }
+        character = Instantiate(movables[characterSelected - 1], spawn.position, Quaternion.identity);
+
+        // if (characterSelected == 2)
+        // {
+        //     Necromancer chell = character as Necromancer;
+        //     if (chell != null)
+        //     {
+        //         chell.Camera = camera.GetComponent<Camera>();
+        //         camera.player = chell.transform;
+        //     }
+        // }
+        // else if (characterSelected == 1)
+        // {
+        //     Knight chell = character as Knight;
+        //     if (chell != null)
+        //     {
+        //         chell.Camera = camera.GetComponent<Camera>();
+        //         camera.player = chell.transform;
+        //     }
+        // }
+        
+        character.GetComponent<CameraHoldable>().camera = camera.GetComponent<Camera>();
+        camera.player = character;
     }
 }

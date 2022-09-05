@@ -7,7 +7,8 @@ namespace CharacterComponents
     [RequireComponent
         (
             typeof(Attackable),
-            typeof(VFXEmittable)
+            typeof(VFXEmittable),
+            typeof(SFXEmittable)
         )
     ]
     [RequireComponent

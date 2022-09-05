@@ -3,7 +3,7 @@ using UnityEngine;
 namespace CharacterComponents
 {
     [RequireComponent(typeof(CharacterController))]
-    public class Movable : MonoBehaviour
+    public class Movable : MovementControllable
     {
         [SerializeField] private float speed;
         [SerializeField] private float rotationSpeed;
@@ -12,7 +12,6 @@ namespace CharacterComponents
         private float baseSpeed;
         private float gravity = 9.81f;
         private float vSpeed;
-        private float horizontalVelocity;
         private bool isMotionBanned;
         private bool isSlowed;
     
@@ -43,9 +42,7 @@ namespace CharacterComponents
         public float GroundDistance => groundDistance;
 
         public float BaseSpeed => baseSpeed;
-
-        public float HorizontalVelocity => horizontalVelocity;
-
+        
         public bool IsMotionBanned => isMotionBanned;
         
         public bool IsSlowed => isSlowed;

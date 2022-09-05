@@ -806,6 +806,7 @@ GameObject:
   - component: {fileID: 4924078610013185766}
   - component: {fileID: -918442880736499384}
   - component: {fileID: 4531250809997574586}
+  - component: {fileID: 941240750113176881}
   - component: {fileID: -6273608532220645066}
   - component: {fileID: 6867629400724804760}
   - component: {fileID: 4091450556714506990}
@@ -902,9 +903,9 @@ MonoBehaviour:
   onEarnDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
-        m_MethodName: Test
+      - m_Target: {fileID: 941240750113176881}
+        m_TargetAssemblyTypeName: CharacterComponents.SFXEmittable, Assembly-CSharp
+        m_MethodName: PlayRandomDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -916,7 +917,19 @@ MonoBehaviour:
         m_CallState: 2
   onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 941240750113176881}
+        m_TargetAssemblyTypeName: CharacterComponents.SFXEmittable, Assembly-CSharp
+        m_MethodName: PlayRandomDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-918442880736499384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,6 +963,36 @@ MonoBehaviour:
   damageVFX: []
   deathPieces: []
   attackVfx: {fileID: 0}
+--- !u!114 &941240750113176881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720415743548138430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03930cb2545fafd4ea6cb709e32f09ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSfx:
+  - {fileID: 8300000, guid: ddb59060dd0ce3b41b49f55fdf6cf068, type: 3}
+  - {fileID: 8300000, guid: 92d41c10b7dcec2408d22970c651a828, type: 3}
+  - {fileID: 8300000, guid: 8dc9201823ddc364b8434721cd06e21d, type: 3}
+  attackSfx:
+  - {fileID: 8300000, guid: f738a93ea44c66d4ebb482357815d89e, type: 3}
+  - {fileID: 8300000, guid: 8758a48f40c19914e9bc8d7b7aa6b193, type: 3}
+  - {fileID: 8300000, guid: 12e4b1c9e599e69459550af3bcc344c1, type: 3}
+  - {fileID: 8300000, guid: ac1b546c662d8a1429d4bf0c146989b2, type: 3}
+  - {fileID: 8300000, guid: 78ed46ccdb68c5940a5911bde23e8fca, type: 3}
+  damageSfx:
+  - {fileID: 8300000, guid: fe3233decc402a84db024dd2e0f28200, type: 3}
+  - {fileID: 8300000, guid: de0c81cef3f758840b898b7597ea2ada, type: 3}
+  - {fileID: 8300000, guid: 577a500c22d0edd4c8bcebeb7e870d66, type: 3}
+  deathSfx: []
+  bodyAudio: {fileID: 3193344604614918735}
+  weaponAudio: {fileID: 1720415743370653303}
+  footAudio: {fileID: 6832905762809804865}
 --- !u!114 &-6273608532220645066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2021,7 +2064,7 @@ GameObject:
   - component: {fileID: 1720415743550673673}
   - component: {fileID: 3193344604614918735}
   - component: {fileID: 1720415743558106331}
-  - component: {fileID: 1720415741905971461}
+  - component: {fileID: 3963544984398764869}
   m_Layer: 6
   m_Name: ToonRTS_demo_Knight
   m_TagString: Untagged
@@ -2163,7 +2206,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1720415741905971461
+--- !u!114 &3963544984398764869
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2172,28 +2215,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1720415743550705513}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbe8872a339568f41b69261c6133b4c4, type: 3}
+  m_Script: {fileID: 11500000, guid: c274e3fcdb97c79488e81f6a6303dbfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordTrail: {fileID: 1720415743347621059}
-  blood: {fileID: 5451836596247987397}
-  footAudio: {fileID: 6832905762809804865}
-  swordAudio: {fileID: 1720415743370653303}
-  bodyAudio: {fileID: 3193344604614918735}
-  footsteps:
-  - {fileID: 8300000, guid: ddb59060dd0ce3b41b49f55fdf6cf068, type: 3}
-  - {fileID: 8300000, guid: 92d41c10b7dcec2408d22970c651a828, type: 3}
-  - {fileID: 8300000, guid: 8dc9201823ddc364b8434721cd06e21d, type: 3}
-  slashes:
-  - {fileID: 8300000, guid: f738a93ea44c66d4ebb482357815d89e, type: 3}
-  - {fileID: 8300000, guid: 8758a48f40c19914e9bc8d7b7aa6b193, type: 3}
-  - {fileID: 8300000, guid: 12e4b1c9e599e69459550af3bcc344c1, type: 3}
-  - {fileID: 8300000, guid: ac1b546c662d8a1429d4bf0c146989b2, type: 3}
-  - {fileID: 8300000, guid: 78ed46ccdb68c5940a5911bde23e8fca, type: 3}
-  damages:
-  - {fileID: 8300000, guid: fe3233decc402a84db024dd2e0f28200, type: 3}
-  - {fileID: 8300000, guid: de0c81cef3f758840b898b7597ea2ada, type: 3}
-  - {fileID: 8300000, guid: 577a500c22d0edd4c8bcebeb7e870d66, type: 3}
+  attackTrail: {fileID: 1720415743347621059}
+  anim: {fileID: 1720415743558106331}
+  movable: {fileID: 5216269688957853851}
+  itemsHoldable: {fileID: -6273608532220645066}
+  sfx: {fileID: 941240750113176881}
 --- !u!1 &1720415743550705515
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,7 +3247,7 @@ GameObject:
   - component: {fileID: 5451836596247987397}
   - component: {fileID: 5464347385573611457}
   m_Layer: 0
-  m_Name: Particle System_B
+  m_Name: BloodFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

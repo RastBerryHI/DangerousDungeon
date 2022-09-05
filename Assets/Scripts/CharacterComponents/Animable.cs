@@ -6,19 +6,12 @@ namespace CharacterComponents
     public class Animable : MonoBehaviour
     {
         [SerializeField] private TrailRenderer attackTrail;
-        [SerializeField] private AudioSource bodyAudio;
-        [SerializeField] private AudioSource footAudio;
-        [SerializeField] private AudioSource weaponAudio;
         [SerializeField] private Animator anim;
         
         [Header("Character Components")]
-        [SerializeField] private AIMovable movable;
+        [SerializeField] private MovementControllable movable;
         [SerializeField] private ItemsHoldable itemsHoldable;
-        
-        [Header("SFX")]
-        [SerializeField] private AudioClip[] movementSfx;
-        [SerializeField] private AudioClip[] attackSfx;
-        [SerializeField] private AudioClip[] deathSfx;
+        [SerializeField] private SFXEmittable sfx;
 
         private void Update()
         {
@@ -52,12 +45,13 @@ namespace CharacterComponents
 
         public void PlayFootStep()
         {
-            footAudio.PlayOneShot(movementSfx[Random.Range(0, movementSfx.Length)]);
+            sfx.PlayRandomMovement();
         }
 
         public void ActivateDamageZone()
         {
             itemsHoldable.ActivateDamageZone();
+            sfx.PlayRandomAttack();
         }
 
         public void DisableDamageZone()

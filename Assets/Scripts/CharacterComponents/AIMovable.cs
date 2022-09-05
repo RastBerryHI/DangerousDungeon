@@ -4,7 +4,7 @@ using UnityEngine.AI;
 namespace CharacterComponents
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    public class AIMovable : MonoBehaviour
+    public class AIMovable : MovementControllable
     {
         [SerializeField] private float speed;
         [SerializeField] private float rotationSpeed;
@@ -17,7 +17,6 @@ namespace CharacterComponents
         private bool isMotionBanned;
         private bool isGrounded;
         private bool isSlowed;
-        private float horizontalVelocity;
     
         private NavMeshAgent agent;
         private Transform target;
@@ -45,9 +44,7 @@ namespace CharacterComponents
         public float GroundDistance => groundDistance;
 
         public float BaseSpeed => baseSpeed;
-
-        public float HorizontalVelocity => horizontalVelocity;
-
+        
         public bool IsMotionBanned => isMotionBanned;
 
         public bool IsGrounded => isGrounded;

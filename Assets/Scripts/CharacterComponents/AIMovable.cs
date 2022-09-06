@@ -61,8 +61,6 @@ namespace CharacterComponents
     
         private void Update()
         {
-            ApplyGravity();
-        
             if (isMotionBanned)
             {
                 return;
@@ -114,26 +112,6 @@ namespace CharacterComponents
             Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
 
             cache.Transform.rotation = Quaternion.RotateTowards(cache.Transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-        }
-
-        private void ApplyGravity()
-        {
-            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-            if (velocity.y >= 0)
-            {
-                return;
-            }
-        
-            if (isGrounded)
-            {
-                velocity.y = -2f;
-                agent.Move(velocity * Time.deltaTime);
-                return;
-            }
-
-            velocity.y += -0.00001f * Time.deltaTime;
-            agent.Move(velocity);
         }
     }
 }

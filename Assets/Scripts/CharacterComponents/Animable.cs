@@ -22,24 +22,21 @@ namespace CharacterComponents
             anim.SetFloat("Velocity", movable.HorizontalVelocity);
         }
 
-        public async void Attack()
+        private async void Trigger(string state)
         {
-            anim.SetBool("isAttack", true);
-            await UniTask.Delay(100);
-            if (anim)
-            {
-                anim.SetBool("isAttack", false);
-            }
+            anim.SetTrigger(state);
+            await UniTask.NextFrame();
+            anim.ResetTrigger(state);
+        }
+
+        public void Attack()
+        {
+            Trigger("Attack");
         }
         
-        public async void EarnDamage()
+        public void EarnDamage()
         {
-           anim.SetBool("isDamage", true); 
-           await UniTask.Delay(100);
-           if (anim)
-           {
-               anim.SetBool("isDamage", false);
-           }
+           Trigger("Damage");
         }
 
         public void PlayFootStep()

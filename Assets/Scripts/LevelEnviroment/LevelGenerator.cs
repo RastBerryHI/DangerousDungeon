@@ -98,6 +98,7 @@ public class LevelGenerator : MonoBehaviour
         if (dungeonUnit.name.Contains("BossArena"))
         {
             Debug.Log("Boss");
+            // TODO: Implement summoned skeletons decrementing
             if (sender.name.Contains("Boss"))
             {
                 currentEnemyAmount--;

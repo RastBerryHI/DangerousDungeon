@@ -6119,18 +6119,6 @@ MonoBehaviour:
   onEarnDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 318230281305382625}
-        m_TargetAssemblyTypeName: Damageble, Assembly-CSharp
-        m_MethodName: EarnDamage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2671888152471330800}
         m_TargetAssemblyTypeName: CharacterComponents.SFXEmittable, Assembly-CSharp
         m_MethodName: PlayRandomDamage
@@ -6165,6 +6153,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4903986737748030359, guid: 7e7f6abd7ba9a004ab6b07969f2f040b, type: 3}
+        m_TargetAssemblyTypeName: LevelGenerator, Assembly-CSharp
+        m_MethodName: DecrementEnemyCount
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4252540626751764442}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7715,7 +7715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c274e3fcdb97c79488e81f6a6303dbfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTrail: {fileID: 4252540626751758610}
   anim: {fileID: 8598977639496276584}
   movable: {fileID: 8985280660597764132}
   itemsHoldable: {fileID: 1642942724299342933}

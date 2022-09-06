@@ -9,10 +9,15 @@ public class DamageZone : MonoBehaviour
     [SerializeField] private ItemsHoldable itemsHoldable;
     [SerializeField] private Damageble damageble;
     
-    private Transform trm;
+    [SerializeField] private Transform trm;
     private IDestroyable destroyable;
     
     public UnityAction<Damageble> OnOverlap;
+
+    private void Start()
+    {
+        trm = transform;
+    }
 
     private void OnTriggerEnter(Collider other)
     {

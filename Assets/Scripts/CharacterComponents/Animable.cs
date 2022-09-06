@@ -5,7 +5,6 @@ namespace CharacterComponents
 {
     public class Animable : MonoBehaviour
     {
-        [SerializeField] private TrailRenderer attackTrail;
         [SerializeField] private Animator anim;
         
         [Header("Character Components")]

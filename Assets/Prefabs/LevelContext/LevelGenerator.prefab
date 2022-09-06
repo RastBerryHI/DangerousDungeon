@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8389267488969565561
+--- !u!1 &4903986737748030358
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8389267488969565567}
-  - component: {fileID: 8389267488969565560}
+  - component: {fileID: 4903986737748030352}
+  - component: {fileID: 4903986737748030359}
   m_Layer: 0
   m_Name: LevelGenerator
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8389267488969565567
+--- !u!4 &4903986737748030352
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8389267488969565561}
+  m_GameObject: {fileID: 4903986737748030358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.8335443, y: -25.648527, z: -33.928135}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +32,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8389267488969565560
+--- !u!114 &4903986737748030359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8389267488969565561}
+  m_GameObject: {fileID: 4903986737748030358}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc09a3f1fb9188746a52e7bd6c7e22ac, type: 3}
@@ -62,16 +62,18 @@ MonoBehaviour:
   minWaves: 2
   maxWaves: 3
   waves: 0
-  unitsTillBoss: 14
+  unitsTillBoss: 3
   respawnWave: 5
-  bIsUnitLoaded: 1
   allUnits: []
   enemies:
-  - {fileID: 4252540626751758588, guid: 83bb9845f6dddf94f9d549988af07fb5, type: 3}
-  - {fileID: 7055994241612576313, guid: 615c5a052b9c03c409d230d80c063eda, type: 3}
+  - {fileID: 8985280660597764132, guid: 83bb9845f6dddf94f9d549988af07fb5, type: 3}
+  spawnFX: {fileID: 429849145465349397, guid: 6c6ce8ef18c213b42a565e8c5439cd56, type: 3}
   onUnitCleared:
     m_PersistentCalls:
       m_Calls: []
   onEnemyDie:
+    m_PersistentCalls:
+      m_Calls: []
+  onWaveCleared:
     m_PersistentCalls:
       m_Calls: []

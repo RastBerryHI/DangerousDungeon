@@ -19,7 +19,7 @@ public class Damageble : MonoBehaviour
             {
                 health = 0;
             }
-            if (health > maxHealth)
+            else if (health > maxHealth)
             {
                 health = maxHealth;
             }
@@ -54,7 +54,6 @@ public class Damageble : MonoBehaviour
     private void Die()
     {
         onDie.Invoke();
-        LevelGenerator.s_levelGenerator.DecrementEnemyCount(gameObject);
         
         // Implement summoned skeleton removing
         // if (SkeletonBoss.s_instance != null)

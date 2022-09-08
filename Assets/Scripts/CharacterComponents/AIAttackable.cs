@@ -1,3 +1,4 @@
+using CharacterComponents;
 using UnityEngine;
 using UnityEngine.AI;
 

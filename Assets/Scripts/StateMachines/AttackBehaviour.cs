@@ -1,3 +1,4 @@
+using CharacterComponents;
 using UnityEngine;
 
 public class AttackBehaviour : StateMachineBehaviour
@@ -13,6 +14,6 @@ public class AttackBehaviour : StateMachineBehaviour
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        attackable.onEndAttack.Invoke();
+        attackable.onEndAction?.Invoke();
     }
 }

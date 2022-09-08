@@ -1,9 +1,13 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
-public class Attackable : MonoBehaviour
+namespace CharacterComponents
 {
-    public UnityEvent onAttack;
-
-    public UnityEvent onEndAttack;
+    public class Attackable : MonoBehaviour
+    {
+        public UnityEvent onAttack;
+        public UnityEvent onSecondaryAction;
+        public UnityEvent onEndAction;
+    }
 }

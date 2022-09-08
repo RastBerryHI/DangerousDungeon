@@ -667,7 +667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1720415743347621058
 Transform:
   m_ObjectHideFlags: 0
@@ -691,7 +691,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720415743347621057}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 5216269688957853851}
   - component: {fileID: 5430344245019858149}
   - component: {fileID: 4924078610013185766}
-  - component: {fileID: -918442880736499384}
+  - component: {fileID: 837300807946139255}
   - component: {fileID: 4531250809997574586}
   - component: {fileID: 941240750113176881}
   - component: {fileID: -6273608532220645066}
@@ -897,9 +897,9 @@ MonoBehaviour:
   onEarnDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 941240750113176881}
-        m_TargetAssemblyTypeName: CharacterComponents.SFXEmittable, Assembly-CSharp
-        m_MethodName: PlayRandomDamage
+      - m_Target: {fileID: 4531250809997574586}
+        m_TargetAssemblyTypeName: VFXEmittable, Assembly-CSharp
+        m_MethodName: EmitAttackVfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -924,7 +924,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-918442880736499384
+--- !u!114 &837300807946139255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -933,15 +933,66 @@ MonoBehaviour:
   m_GameObject: {fileID: 1720415743548138430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3df008488d41b14c98ac5339463f5fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 7493893ae14e7634081407c09c577194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onAttack:
     m_PersistentCalls:
-      m_Calls: []
-  onEndAttack:
+      m_Calls:
+      - m_Target: {fileID: 3963544984398764869}
+        m_TargetAssemblyTypeName: CharacterComponents.Animable, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4531250809997574586}
+        m_TargetAssemblyTypeName: VFXEmittable, Assembly-CSharp
+        m_MethodName: EmitAttackVfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onSecondaryAction:
     m_PersistentCalls:
       m_Calls: []
+  onEndAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 837300807946139255}
+        m_TargetAssemblyTypeName: CharacterComponents.PlayerAttackable, Assembly-CSharp
+        m_MethodName: FinnishAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4531250809997574586}
+        m_TargetAssemblyTypeName: VFXEmittable, Assembly-CSharp
+        m_MethodName: AbortAttackVfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4531250809997574586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,9 +1005,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8b28c1c6bd8e94387e7afc4ae2397e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageVFX: []
+  damageVFX:
+  - {fileID: 5451836596247987397}
   deathPieces: []
-  attackVfx: {fileID: 0}
+  attackVfx: {fileID: 1720415743347621057}
 --- !u!114 &941240750113176881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2218,7 +2270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c274e3fcdb97c79488e81f6a6303dbfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTrail: {fileID: 1720415743347621059}
   anim: {fileID: 1720415743558106331}
   movable: {fileID: 5216269688957853851}
   itemsHoldable: {fileID: -6273608532220645066}

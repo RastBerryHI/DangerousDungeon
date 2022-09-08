@@ -6,14 +6,13 @@ namespace CharacterComponents
 
     [RequireComponent
         (
-            typeof(Attackable),
             typeof(VFXEmittable),
+            typeof(Attackable),
             typeof(SFXEmittable)
         )
     ]
     [RequireComponent
         (
-            typeof(Attackable),
             typeof(Damageble),
             typeof(ItemsHoldable)
         )

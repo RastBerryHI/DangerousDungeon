@@ -6015,21 +6015,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onEndAttack:
+  onSecondaryAction:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4976108519740691801}
-        m_TargetAssemblyTypeName: VFXEmittable, Assembly-CSharp
-        m_MethodName: AbortAttackVfx
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  onEndAction:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndSecondAction:
+    m_PersistentCalls:
+      m_Calls: []
   fieldOfView: {fileID: 4252540626751758577}
   agent: {fileID: 5234824782789649377}
 --- !u!114 &4976108519740691801
@@ -6115,7 +6109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efefd5d26b5c115438ba03cb1655ef2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 100
   onEarnDamage:
     m_PersistentCalls:
       m_Calls:

@@ -7,15 +7,15 @@ public class VFXEmittable : MonoBehaviour
     [SerializeField] private Rigidbody[] deathPieces;
     [SerializeField] private GameObject attackVfx;
     
-    public void EmitAll()
+    public void EmitAllDamageVFX()
     {
         foreach(var vfx in damageVFX)
         {
-            vfx.Emit(10);vfx.Emit(10);
+            vfx.Emit(10);
         }
     }
 
-    public void EmitById(int id)
+    public void EmitDamageVFXById(int id)
     {
         try
         {

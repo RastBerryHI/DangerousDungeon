@@ -1,19 +1,20 @@
 using CharacterComponents;
 using UnityEngine;
 
-public class AttackBehaviour : StateMachineBehaviour
+namespace StateMachines
 {
-    private Attackable attackable;
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public class AttackBehaviour : CacheBehaviour
     {
-        if (!attackable)
+        public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            attackable = animator.GetComponentInParent<Attackable>();
+            Movable.IsMotionBanned = true;
         }
-    }
 
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        attackable.onEndAction?.Invoke();
+        public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            Attackable?.onEndAction?.Invoke();
+        
+            Movable.IsMotionBanned = false;
+        }
     }
 }

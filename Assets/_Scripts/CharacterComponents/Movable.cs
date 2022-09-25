@@ -10,7 +10,7 @@ namespace CharacterComponents
         [SerializeField] private float groundDistance;
     
         private float baseSpeed;
-        private float gravity = 9.81f;
+        private readonly float gravity = 9.81f;
         private float vSpeed;
         private bool isMotionBanned;
         private bool isSlowed;
@@ -36,14 +36,18 @@ namespace CharacterComponents
                 }
             }
         }
-    
+
+        public bool IsMotionBanned
+        {
+            set => isMotionBanned = value;
+            get => isMotionBanned;
+        }
+        
         public float RotationSpeed => rotationSpeed;
 
         public float GroundDistance => groundDistance;
 
         public float BaseSpeed => baseSpeed;
-        
-        public bool IsMotionBanned => isMotionBanned;
         
         public bool IsSlowed => isSlowed;
 

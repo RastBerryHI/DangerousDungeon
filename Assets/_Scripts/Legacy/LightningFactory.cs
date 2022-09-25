@@ -7,7 +7,9 @@ public class LightningFactory : MonoBehaviour
 
     private void Awake()
     {
-        MeleeWeapon currentWeapon = FindObjectOfType<Knight>().CurrentWeapon.GetComponent<MeleeWeapon>();
+        // TODO: change lightning cast system
+        
+        MeleeWeapon currentWeapon = FindObjectOfType<ItemsHoldable>().Weapon.GetComponent<MeleeWeapon>();
         LightningBoltScript instantiated = Instantiate(lightning, transform.position, Quaternion.identity, transform.parent);
 
         instantiated.StartObject.transform.parent = transform.parent;

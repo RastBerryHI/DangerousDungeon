@@ -54,11 +54,13 @@ public class MeleeWeapon : Weapon, IWeaponEffect
     private void OnTriggerEnter(Collider other)
     {
         if(bIsUnInterractable == true) return;
-        if(other.tag == "Player" && other.transform.name.Contains("Knight") == true)
+        if(other.CompareTag("Player") && other.transform.name.Contains("Knight") == true)
         {
-            Knight knight = other.GetComponent<Knight>();
-            knight.PickupSword(this); 
-            damageZone = knight.DamageZone;
+            // TODO: implement picking up items
+            
+            //Knight knight = other.GetComponent<Knight>();
+            //knight.PickupSword(this); 
+            //damageZone = knight.DamageZone;
 
             //damageZone.weapon = this;
             pickupVoulme.enabled = false;

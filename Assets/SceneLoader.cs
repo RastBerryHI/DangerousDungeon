@@ -1,10 +1,9 @@
-using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class SceneLoader : MonoBehaviour
 {
-    private Knight knight;
     private void Start()
     {
         //knight = FindObjectOfType<Knight>();
@@ -12,12 +11,12 @@ public class SceneLoader : MonoBehaviour
     }
     private void ReloadGame()
     {
-        StartCoroutine(DelayReoad());
+        DelayReload();
     }
 
-    private IEnumerator<WaitForSeconds> DelayReoad()
+    private async void DelayReload()
     {
-        yield return new WaitForSeconds(5f);
+        await UniTask.Delay(5000);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -33,7 +33,22 @@ namespace CharacterComponents
         {
             Trigger("Attack");
         }
-        
+
+        public void SecondAction()
+        {
+            Trigger("SecondAction");
+        }
+
+        public void SetSecondLayer()
+        {
+            anim.SetLayerWeight(1, 1);
+        }
+
+        public void SetFirstLayer()
+        {
+            anim.SetLayerWeight(1, 0);
+        }
+
         public void EarnDamage()
         {
            Trigger("Damage");

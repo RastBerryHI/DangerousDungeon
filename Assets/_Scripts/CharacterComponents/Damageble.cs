@@ -51,6 +51,9 @@ public class Damageble : MonoBehaviour
         onEarnDamage.Invoke();
     }
 
+    public void BecomeImmortal() => isImmortal = true;
+    public void BecomeMortal() => isImmortal = false;
+    
     private void Die()
     {
         onDie.Invoke();

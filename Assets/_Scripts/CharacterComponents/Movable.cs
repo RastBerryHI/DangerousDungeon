@@ -106,9 +106,12 @@ namespace CharacterComponents
             var x = Input.GetAxisRaw("Horizontal");
             var z = Input.GetAxisRaw("Vertical");
 #endif
-            velocity = (new Vector3(-x, 0, -z)).normalized;
-            velocity.y = vSpeed;
+            var rawVelocity = (new Vector3(-x, 0, -z));
             
+            velocity = rawVelocity.normalized;
+            velocity.y = vSpeed;
+
+            horizontalVelocity = rawVelocity.magnitude;
             controller.Move(velocity * speed * Time.deltaTime);
         }
 

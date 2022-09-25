@@ -1096,7 +1096,7 @@ GameObject:
   - component: {fileID: 3358854119626757513}
   - component: {fileID: 3358854119626525094}
   - component: {fileID: 3358854119626525090}
-  - component: {fileID: 3358854119626525092}
+  - component: {fileID: 2208407374196026997}
   m_Layer: 6
   m_Name: Necromancer
   m_TagString: Untagged
@@ -1238,7 +1238,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3358854119626525092
+--- !u!114 &2208407374196026997
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1247,22 +1247,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3358854119626525097}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b26e223cd06ec54a954173d3f5a8dc6, type: 3}
+  m_Script: {fileID: 11500000, guid: c274e3fcdb97c79488e81f6a6303dbfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blood: {fileID: 3358854120838843750}
-  footAudio: {fileID: 3358854121113844103}
-  wandAudio: {fileID: 3358854121205875750}
-  bodyAudio: {fileID: 3358854119626525090}
-  footsteps:
-  - {fileID: 8300000, guid: 7eb30f939c477954b9a5145e6c413722, type: 3}
-  - {fileID: 8300000, guid: fac6abb748289e448961f6ad3d3de7dc, type: 3}
-  damages:
-  - {fileID: 8300000, guid: fe3233decc402a84db024dd2e0f28200, type: 3}
-  - {fileID: 8300000, guid: 577a500c22d0edd4c8bcebeb7e870d66, type: 3}
-  - {fileID: 8300000, guid: de0c81cef3f758840b898b7597ea2ada, type: 3}
-  soulGrabber: {fileID: 2408742599231883733, guid: 5515508e5a1c69647a31c5a0832359bb, type: 3}
-  devastationPointsHolder: {fileID: 7171160835894543080}
+  anim: {fileID: 3358854119626525094}
+  movable: {fileID: 2273471143347181120}
+  itemsHoldable: {fileID: 3920148123246131243}
+  sfx: {fileID: 2401777769167182252}
 --- !u!1 &3358854119626525099
 GameObject:
   m_ObjectHideFlags: 0
@@ -8369,9 +8360,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3358854121119439811}
+  - component: {fileID: 3061173669029394321}
+  - component: {fileID: 2273471143347181120}
+  - component: {fileID: 8817158181060262818}
+  - component: {fileID: 5140216278708200987}
+  - component: {fileID: 2050055237432645471}
+  - component: {fileID: 5906068047377691145}
+  - component: {fileID: 415842130330814358}
+  - component: {fileID: 2401777769167182252}
+  - component: {fileID: 3920148123246131243}
   - component: {fileID: 3358854121119439808}
-  - component: {fileID: 3358854121119439809}
-  - component: {fileID: -497561531948444744}
   m_Layer: 6
   m_Name: Player_Necromancer
   m_TagString: Player
@@ -8402,6 +8400,256 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3061173669029394321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358854121119439810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c03fdc659ac374bb14713e897e60e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2273471143347181120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358854121119439810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d98bda3772514a0bb1e58d7d22843279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  rotationSpeed: 500
+  groundDistance: 0.1
+--- !u!114 &8817158181060262818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358854121119439810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d471f0594d02cd4fb8d5bd1e8ee5d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artifactPocket: {fileID: 6731688233007373514}
+  wonderPocket: {fileID: 387461240654611286}
+--- !u!114 &5140216278708200987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358854121119439810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efefd5d26b5c115438ba03cb1655ef2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  onEarnDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 415842130330814358}
+        m_TargetAssemblyTypeName: VFXEmittable, Assembly-CSharp
+        m_MethodName: EmitAllDamageVFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2208407374196026997}
+        m_TargetAssemblyTypeName: CharacterComponents.Animable, Assembly-CSharp
+        m_MethodName: EarnDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2401777769167182252}
+        m_TargetAssemblyTypeName: CharacterComponents.SFXEmittable, Assembly-CSharp
+        m_MethodName: PlayRandomDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2050055237432645471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358854121119439810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a948b3b16a8942dbabeac20f2c4df2e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyHold: 323
+  keyDown: 324
+  onKeyHold:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5906068047377691145}
+        m_TargetAssemblyTypeName: CharacterComponents.PlayerAttackable, Assembly-CSharp
+        m_MethodName: FirstAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onKeyDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5906068047377691145}
+        m_TargetAssemblyTypeName: CharacterComponents.PlayerAttackable, Assembly-CSharp
+        m_MethodName: SecondaryAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5906068047377691145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358854121119439810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7493893ae14e7634081407c09c577194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2208407374196026997}
+        m_TargetAssemblyTypeName: CharacterComponents.Animable, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 415842130330814358}
+        m_TargetAssemblyTypeName: VFXEmittable, Assembly-CSharp
+        m_MethodName: EmitAttackVfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onSecondaryAction:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 415842130330814358}
+        m_TargetAssemblyTypeName: VFXEmittable, Assembly-CSharp
+        m_MethodName: AbortAttackVfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEndSecondAction:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &415842130330814358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358854121119439810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b28c1c6bd8e94387e7afc4ae2397e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageVFX:
+  - {fileID: 3358854120838843750}
+  deathPieces: []
+  attackVfx: {fileID: 0}
+--- !u!114 &2401777769167182252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358854121119439810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03930cb2545fafd4ea6cb709e32f09ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSfx: []
+  attackSfx: []
+  damageSfx: []
+  deathSfx: []
+  bodyAudio: {fileID: 0}
+  weaponAudio: {fileID: 0}
+  footAudio: {fileID: 0}
+--- !u!114 &3920148123246131243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358854121119439810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95917fd53647aa4487c53643d1f16a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageZone: {fileID: 0}
+  weaponSocket: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!143 &3358854121119439808
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8420,59 +8668,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: -0.27, y: 2.45, z: 0}
---- !u!114 &3358854121119439809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3358854121119439810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a82ff4e57c30a644f9b8d3af02bf0bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onAttack:
-    m_PersistentCalls:
-      m_Calls: []
-  onEarnDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  onDie:
-    m_PersistentCalls:
-      m_Calls: []
-  health: 5
-  damage: 3
-  speed: 5
-  rotationSpeed: 400
-  groundDistance: 0.1
-  gold: 0
-  camera: {fileID: 0}
-  groundCheck: {fileID: 3358854121113844102}
-  healthCircle: {fileID: 3358854120413572875}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 512
-  characterMask:
-    serializedVersion: 2
-    m_Bits: 64
-  onAttackAlt:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &-497561531948444744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3358854121119439810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d471f0594d02cd4fb8d5bd1e8ee5d7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  artifactPocket: {fileID: 6731688233007373514}
-  wonderPocket: {fileID: 387461240654611286}
 --- !u!1 &3358854121205875755
 GameObject:
   m_ObjectHideFlags: 0
@@ -8518,6 +8713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1fc485bd608884f9d4605d375a1c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   damageBonus: 3
   weaponType: 2
   characters: []

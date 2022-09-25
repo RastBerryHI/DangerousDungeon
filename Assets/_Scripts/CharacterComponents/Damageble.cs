@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -33,7 +34,12 @@ public class Damageble : MonoBehaviour
     [Space]
     public UnityEvent onEarnDamage;
     public UnityEvent onDie;
-    
+
+    private void Awake()
+    {
+        maxHealth = health;
+    }
+
     public void EarnDamage(int damage)
     {
         if (isImmortal)

@@ -7,7 +7,6 @@ namespace CharacterComponents
     {
         public void FirstAction(bool isInvoking)
         {
-            Debug.Log(isInvoking);
             if (isInvoking)
             {
                 onAttack?.Invoke();
@@ -25,7 +24,7 @@ namespace CharacterComponents
                 return;
             }
             
-            onEndAction?.Invoke();
+            onEndSecondAction?.Invoke();
         }
     }
 }

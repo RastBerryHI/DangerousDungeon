@@ -9,5 +9,6 @@ namespace CharacterComponents
         public UnityEvent onAttack;
         public UnityEvent onSecondaryAction;
         public UnityEvent onEndAction;
+        public UnityEvent onEndSecondAction;
     }
 }

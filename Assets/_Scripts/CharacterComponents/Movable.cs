@@ -88,7 +88,11 @@ namespace CharacterComponents
             }
             
             velocity.y = 0;
-            RotateToDirection(velocity);
+            
+            if (!isMotionBanned)
+            {
+                RotateToDirection(velocity);
+            }
         }
         
         private void ApplyGravity()

@@ -7,6 +7,11 @@ namespace CharacterComponents
     {
         public void FirstAction(bool isInvoking)
         {
+            if (!attackAllowed)
+            {
+                return;
+            }
+            
             if (isInvoking)
             {
                 onAttack?.Invoke();

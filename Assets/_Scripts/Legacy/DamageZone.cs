@@ -53,7 +53,7 @@ public class DamageZone : MonoBehaviour
         //     weapon.PutEffectOn(currentCharacter.transform);
         // }
 
-        OnOverlap(target);
+        OnOverlap?.Invoke(target);
     }
 
     private void InteractWithDestroyable(IDestroyable destroyObj)

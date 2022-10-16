@@ -59,17 +59,10 @@ public class Damageble : MonoBehaviour
 
     public void BecomeImmortal() => isImmortal = true;
     public void BecomeMortal() => isImmortal = false;
+    public void SelfDestroy() => Destroy(gameObject);
     
     private void Die()
     {
-        onDie.Invoke();
-        
-        // Implement summoned skeleton removing
-        // if (SkeletonBoss.s_instance != null)
-        // {
-        //     SkeletonBoss.s_instance.SummonedSkeletons.Remove(this);
-        // }
-        
-        Destroy(gameObject);
+        onDie?.Invoke();
     }
 }

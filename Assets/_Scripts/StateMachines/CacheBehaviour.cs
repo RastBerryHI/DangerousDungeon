@@ -20,7 +20,5 @@ public class CacheBehaviour : StateMachineBehaviour
         {
             movable = animator.GetComponentInParent<Movable>();
         }
-
-        movable.IsMotionBanned = true;
     }
 }

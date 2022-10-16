@@ -6,14 +6,14 @@ public class PlayerSummon : MonoBehaviour
     public static PlayerSummon s_instance;
 
     [SerializeField] private Transform spawn;
-    [SerializeField] private Movable[] movables;
+    [SerializeField] private PlayerMovable[] movables;
     [SerializeField] private new PlayerCamera camera;
 
-    private Movable character;
+    private PlayerMovable character;
 
     private int characterSelected;
 
-    public Movable Character => character;
+    public PlayerMovable Character => character;
 
     private void Awake()
     {

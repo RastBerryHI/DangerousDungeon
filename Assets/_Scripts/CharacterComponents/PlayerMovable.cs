@@ -3,7 +3,7 @@ using UnityEngine;
 namespace CharacterComponents
 {
     [RequireComponent(typeof(CharacterController))]
-    public class Movable : MovementControllable
+    public class PlayerMovable : MovementControllable
     {
         [SerializeField] private float speed;
         [SerializeField] private float rotationSpeed;
@@ -12,7 +12,6 @@ namespace CharacterComponents
         private float baseSpeed;
         private readonly float gravity = 9.81f;
         private float vSpeed;
-        private bool isMotionBanned;
         private bool isSlowed;
     
         private CharacterCached cache;
@@ -37,12 +36,6 @@ namespace CharacterComponents
             }
         }
 
-        public bool IsMotionBanned
-        {
-            set => isMotionBanned = value;
-            get => isMotionBanned;
-        }
-        
         public float RotationSpeed => rotationSpeed;
 
         public float GroundDistance => groundDistance;
@@ -61,12 +54,14 @@ namespace CharacterComponents
         private void Update()
         {
             ApplyGravity();
-            
-            if (!isMotionBanned)
+
+            if (IsMotionBanned)
             {
-                Move(Speed);
+                return;
             }
             
+            Move(Speed);
+
 #if UNITY_ANDROID
             for (int i = 0; i < Input.touchCount; i++)
             {
@@ -89,10 +84,7 @@ namespace CharacterComponents
             
             velocity.y = 0;
             
-            if (!isMotionBanned)
-            {
-                RotateToDirection(velocity);
-            }
+            RotateToDirection(velocity);
         }
         
         private void ApplyGravity()

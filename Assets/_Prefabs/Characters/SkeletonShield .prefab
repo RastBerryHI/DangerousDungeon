@@ -7558,7 +7558,7 @@ GameObject:
   - component: {fileID: 4252540626751758631}
   - component: {fileID: 4044958362325394855}
   m_Layer: 6
-  m_Name: UD_demo_character
+  m_Name: SkeletonShield_Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

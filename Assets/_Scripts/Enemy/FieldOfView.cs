@@ -49,8 +49,8 @@ public class FieldOfView : MonoBehaviour
 
         private Transform GetClosestTarget()
         {
-            Transform target = visibleTargets[0];
-            float minDistance = 100f;
+            var target = visibleTargets[0];
+            var minDistance = 100f;
             
             foreach (Transform t in visibleTargets)
             {
@@ -103,20 +103,20 @@ public class FieldOfView : MonoBehaviour
         {
             visibleTargets.Clear();
         
-            Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask)
+            var targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask)
                 .Where(p => p.transform.CompareTag(targetTag) || p.transform.CompareTag(additionTag)).ToArray<Collider>();
 
             foreach (Collider t in targetsInViewRadius)
             {
-                Transform target = t.transform;
-                Vector3 dirToTarget = (target.position - transform.position).normalized;
+                var target = t.transform;
+                var dirToTarget = (target.position - transform.position).normalized;
 
                 if (!(Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2))
                 {
                     continue;
                 }
             
-                float distance = Vector3.Distance(transform.position, target.position);
+                var distance = Vector3.Distance(transform.position, target.position);
 
                 if (!Physics.Raycast(transform.position, dirToTarget, distance, obstacleMask))
                 {

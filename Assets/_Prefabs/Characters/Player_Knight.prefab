@@ -898,6 +898,18 @@ MonoBehaviour:
   onEarnDamage:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 3963544984398764869}
+        m_TargetAssemblyTypeName: CharacterComponents.Animable, Assembly-CSharp
+        m_MethodName: EarnDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4531250809997574586}
         m_TargetAssemblyTypeName: VFXEmittable, Assembly-CSharp
         m_MethodName: EmitAllDamageVFX
@@ -910,9 +922,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3963544984398764869}
-        m_TargetAssemblyTypeName: CharacterComponents.Animable, Assembly-CSharp
-        m_MethodName: EarnDamage
+      - m_Target: {fileID: 837300807946139255}
+        m_TargetAssemblyTypeName: CharacterComponents.Attackable, Assembly-CSharp
+        m_MethodName: set_AttackAllowed
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 4531250809997574586}
+        m_TargetAssemblyTypeName: VFXEmittable, Assembly-CSharp
+        m_MethodName: AbortAttackVfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -920,7 +944,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   onDie:
     m_PersistentCalls:

@@ -5944,8 +5944,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5790376fc936fd74381493dde095e57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewAngle: 330
-  viewRadius: 10
+  viewAngle: 240
+  viewRadius: 30
   targetMask:
     serializedVersion: 2
     m_Bits: 64
@@ -7558,7 +7558,7 @@ GameObject:
   - component: {fileID: 4252540626751758631}
   - component: {fileID: 4044958362325394855}
   m_Layer: 6
-  m_Name: UD_demo_character
+  m_Name: SkeletonShield_Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7918,20 +7918,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 4252540626751763137}
     m_Modifications:
     - target: {fileID: 116790670194901208, guid: c0c58e01916ab204e995098f1df76f54, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7709123
+      objectReference: {fileID: 0}
+    - target: {fileID: 116790670194901208, guid: c0c58e01916ab204e995098f1df76f54, type: 3}
       propertyPath: m_Size.y
-      value: 1.4294866
+      value: 1.3703377
       objectReference: {fileID: 0}
     - target: {fileID: 116790670194901208, guid: c0c58e01916ab204e995098f1df76f54, type: 3}
       propertyPath: m_Center.x
-      value: -0.09485651
+      value: 0.014217497
       objectReference: {fileID: 0}
     - target: {fileID: 116790670194901208, guid: c0c58e01916ab204e995098f1df76f54, type: 3}
       propertyPath: m_Center.y
-      value: -0.26660413
+      value: -0.29617858
       objectReference: {fileID: 0}
     - target: {fileID: 116790670194901208, guid: c0c58e01916ab204e995098f1df76f54, type: 3}
       propertyPath: m_Center.z
-      value: -0.03184348
+      value: -0.031843483
       objectReference: {fileID: 0}
     - target: {fileID: 116790670194902586, guid: c0c58e01916ab204e995098f1df76f54, type: 3}
       propertyPath: damageble

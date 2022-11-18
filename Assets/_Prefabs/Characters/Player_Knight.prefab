@@ -2286,7 +2286,7 @@ GameObject:
   - component: {fileID: 1720415743558106331}
   - component: {fileID: 3963544984398764869}
   m_Layer: 6
-  m_Name: ToonRTS_demo_Knight
+  m_Name: Player_Knight_Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

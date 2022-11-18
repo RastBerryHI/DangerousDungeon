@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
-    public Movable player;
+    public PlayerMovable player;
     
     [SerializeField] private Vector3 offset;
     [SerializeField] private float step;

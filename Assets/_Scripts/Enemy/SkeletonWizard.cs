@@ -132,7 +132,9 @@ public class SkeletonWizard : Character
         healthCircle.Alert = Health / 3;
         healthCircle.gameObject.SetActive(false);
         maxHealth = health;
-        GetComponentInChildren<DamageZone>().OnOverlap += OnHit;
+        
+        // TODO: Refactor curse binding
+        //GetComponentInChildren<DamageZone>().OnOverlap += OnHit;
     }
 
     private void Update()

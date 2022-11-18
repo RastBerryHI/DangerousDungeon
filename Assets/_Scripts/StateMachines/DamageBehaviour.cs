@@ -1,3 +1,4 @@
+using CharacterComponents;
 using UnityEngine;
 
 namespace StateMachines

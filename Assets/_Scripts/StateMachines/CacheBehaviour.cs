@@ -4,10 +4,10 @@ using UnityEngine;
 public class CacheBehaviour : StateMachineBehaviour
 {
     private Attackable attackable;
-    private Movable movable;
+    private MovementControllable movable;
 
     protected Attackable Attackable => attackable;
-    protected Movable Movable => movable;
+    protected MovementControllable Movable => movable;
     
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -18,7 +18,7 @@ public class CacheBehaviour : StateMachineBehaviour
 
         if (!movable)
         {
-            movable = animator.GetComponentInParent<Movable>();
+            movable = animator.GetComponentInParent<MovementControllable>();
         }
     }
 }

@@ -14,7 +14,6 @@ namespace CharacterComponents
         [SerializeField] private FieldOfView fieldOfView;
     
         private float baseSpeed;
-        private bool isMotionBanned;
         private bool isGrounded;
         private bool isSlowed;
     
@@ -45,8 +44,6 @@ namespace CharacterComponents
 
         public float BaseSpeed => baseSpeed;
         
-        public bool IsMotionBanned => isMotionBanned;
-
         public bool IsGrounded => isGrounded;
 
         public bool IsSlowed => isSlowed;
